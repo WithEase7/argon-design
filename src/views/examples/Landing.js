@@ -16,8 +16,10 @@
 
 */
 import React from "react";
+import styled from 'styled-components'
 // nodejs library that concatenates classes
 import classnames from "classnames";
+import Pricing from "components/Pricing/Pricing.js";
 
 // reactstrap components
 import {
@@ -42,6 +44,7 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 
 // index page sections
 import Download from "../IndexSections/Download.js";
+import Faq from "components/Extras/Faq.js";
 
 class Landing extends React.Component {
   state = {};
@@ -110,6 +113,7 @@ class Landing extends React.Component {
                   </Row>
                 </div>
               </Container>
+              
               {/* SVG separator */}
               <div className="separator separator-bottom separator-skew">
                 <svg
@@ -247,6 +251,7 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
+          
           <section className="section section-lg">
             <Container>
               <Row className="row-grid align-items-center">
@@ -324,6 +329,7 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
+          
           <section className="section bg-secondary">
             <Container>
               <Row className="row-grid align-items-center">
@@ -395,6 +401,7 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
+          
           <section className="section pb-0 bg-gradient-warning">
             <Container>
               <Row className="row-grid align-items-center">
@@ -499,6 +506,60 @@ class Landing extends React.Component {
               </svg>
             </div>
           </section>
+          <MainContainer>
+      <div className="pricing-component">
+        <Pricing
+          data={[
+            { text: "3 new project / month", value: true },
+            { text: "Basic interaction", value: false },
+            { text: "Assets library", value: false },
+          ]}
+          price={0}
+          duration="y"
+          currency="$"
+          buttonContent="Get Started"
+          subTitle="Great for starters"
+          priceText="Discover how to create your first projects."
+          headerText="free"
+        />
+      </div>
+      <div className="pricing-component">
+        <Pricing
+          data={[
+            { text: "3 new project / month", value: true },
+            { text: "Basic interaction", value: true },
+            { text: "Assets library", value: false },
+          ]}
+          price={7}
+          duration="m"
+          background="linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%)"
+          shadow="#96e6a1"
+          currency="₹"
+          buttonContent="Get Started"
+          subTitle="For Planned Projects"
+          priceText="Bring your designs to the next level and export them."
+          headerText="pro"
+        />
+      </div>
+      <div className="pricing-component">
+        <Pricing
+          data={[
+            { text: "3 new project / month", value: true },
+            { text: "Basic interaction", value: true },
+            { text: "Assets library", value: true },
+          ]}
+          price={12}
+          duration="y"
+          background="linear-gradient(to left, #ff0844 0%, #ffb199 100%);"
+          shadow="#ffb199"
+          currency="€"
+          buttonContent="Get Started"
+          subTitle="For Prodessional Use"
+          priceText="Enjoy limitless use with interactive export options."
+          headerText="premium"
+        />
+      </div>
+    </MainContainer>
           <section className="section section-lg">
             <Container>
               <Row className="justify-content-center text-center mb-lg">
@@ -716,6 +777,7 @@ class Landing extends React.Component {
               </Card>
             </Container>
           </section>
+          <Faq />
           <section className="section section-lg bg-gradient-default">
             <Container className="pt-lg pb-300">
               <Row className="text-center justify-content-center">
@@ -861,5 +923,23 @@ class Landing extends React.Component {
     );
   }
 }
+
+const MainContainer = styled.div`
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  margin: 4rem 0 2rem 0;
+
+  @media screen and (max-width: 970px) {
+    height: 100%;
+    flex-direction: column;
+    .pricing-component {
+      margin: 2rem 0;
+    }
+  }
+`;
 
 export default Landing;
