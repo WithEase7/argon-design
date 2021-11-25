@@ -6,14 +6,23 @@ import { FiPlus, FiMinus } from "react-icons/fi";
 
 const Header = styled.h1`
   width: 100%;
-  align-self: center;
   text-align: center;
   font-weight: bold;
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-family: serif;
   color: black;
-  line-height: 4rem;
+  text-align-last: center;
+  line-height: 2.5rem;
   padding: 1rem 4rem;
+  @media (min-width: 768px) {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+  @media (min-width: 968px) {
+    font-size: 4rem;
+    line-height: 4rem;
+    padding: 0 2rem;
+  }
 `;
 
 const Title = styled.h1`
@@ -29,11 +38,16 @@ const FaqSection = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-bottom: 4rem;
 `;
 
 const Container = styled.div`
-  width: 50%;
+  width: 90%;
+  @media (min-width: 768px) {
+    width: 65%;
+  }
+  @media (min-width: 968px) {
+    width: 50%;
+  }
 `;
 
 const Wrap = styled.div`
@@ -63,7 +77,6 @@ const Dropdown = styled.div`
 
 const Faq = () => {
   const [clicked, setClicked] = useState(false);
-
   const toggle = (index) => {
     if (clicked === index) {
       return setClicked(null);

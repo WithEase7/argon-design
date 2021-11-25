@@ -777,7 +777,7 @@ class Landing extends React.Component {
               </Card>
             </Container>
           </section>
-          <Faq />
+          
           <section className="section section-lg bg-gradient-default">
             <Container className="pt-lg pb-300">
               <Row className="text-center justify-content-center">
@@ -916,6 +916,8 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
+          <Faq />
+
           <Download />
         </main>
         <CardsFooter />
