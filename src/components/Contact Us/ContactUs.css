@@ -1,0 +1,135 @@
+
+.master-wrapper{
+    display:flex;
+    width:100%;
+    max-width:1000px;
+    height: 500px;
+    margin: .3rem auto;
+    justify-content: center;
+  
+}
+
+.navdiv{
+    width: 100%;
+  height: 4.8rem;
+  background-color: #172b4d;
+}
+.form{
+    position: relative;
+    width:300px;
+    height:30px;
+    margin-bottom:4rem;
+    background:none ;
+}
+.form-input{
+  position:absolute;
+  top:10px;
+  left:0;
+  width:100%;
+  height:100%;
+ 
+  /* border-radius: 4px; */
+  color:#fff;
+  outline:none;
+ 
+  border:1px solid #fff;
+  background:none ;
+ padding:0.6rem;
+
+
+}
+/* .form-input:focus{
+    border:1px solid yellowgreen;
+} */
+/* .Name,.Email,.Password,.Number{
+    margin-bottom: 1rem;
+} */
+.demo-flex{
+   padding-left: 2rem;
+    width:40%;
+    
+    background: #DA22FF;  /* fallback for old browsers */
+    background-color: #6c33a3;
+    /* background-image: linear-gradient(316deg, #6c33a3 0%, #8241b8 74%); */
+    
+    
+}
+.contact-flex{
+    padding-left: 2rem;
+    width:40%;
+    background-color: #F8F8F8;
+}
+.location,.phone,.email,.website{
+  display:flex;
+  align-items: center;
+}
+.location span,.phone span,.email span,.website span{
+    color:grey;
+    font-weight:400;
+}
+.contact-flex img{
+    width:15px;
+    height:15px;
+    margin-right: 1rem;
+    border:1px solid #6c33a3;
+    padding:0.2rem;
+    border-radius: 50%;
+}
+.follow{
+    display:flex;
+    align-items: center;
+}
+.follow-title,.follow img{
+    margin-right:1rem ;
+}
+.form-label{
+    position:absolute;
+    left:1rem;
+    top:.9rem;
+    padding:0 0.5rem;
+    color:#fff;
+    transition:top 200ms ease-in,
+    left 200ms ease-in,
+    font-size 200ms ease-in;
+}
+.form-input:focus ~ .form-label{
+    top:-0.1rem;
+    /* background-image: linear-gradient(316deg, #6c33a3 0%, #8241b8 74%); */
+    background-color: #6c33a3;
+    font-size: 0.8rem;
+    left:0.8rem;
+    
+}
+.form-input:valid ~ .form-label{
+    top:-0.1rem;
+    /* background-image: linear-gradient(316deg, #6c33a3 0%, #8241b8 74%); */
+    background-color: #6c33a3;
+    font-size: 0.8rem;
+    left:0.8rem;
+}
+.submit-button{
+    background-color:#6c33a3;
+    border:2px solid #fff;
+    color:#fff;
+    padding:0.4rem 1rem;
+    border-radius:4px;
+    transition:all 0.4s ease ;
+}
+.submit-button:hover{
+    border:2px solid #bf00ff;
+    background-color:#fff;
+    color:dimgray;
+}
+@media only screen and (max-width: 992px){
+    .master-wrapper{
+        display:grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        
+       
+    }
+    .demo-flex{
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+    }
+}

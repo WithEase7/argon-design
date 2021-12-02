@@ -63,6 +63,7 @@ class DemoNavbar extends React.Component {
   };
 
   render() {
+    const{background} = this.props;
     return (
       <>
         <header className="header-global">
@@ -71,7 +72,7 @@ class DemoNavbar extends React.Component {
             expand="lg"
             id="navbar-main"
           >
-            <Container>
+            <Container style={{backgroundColor: background}}>
               <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
                 <img
                   alt="..."
@@ -189,8 +190,12 @@ class DemoNavbar extends React.Component {
                       <DropdownItem to="/register-page" tag={Link}>
                         Register
                       </DropdownItem>
+                      <DropdownItem to="/cart-page" tag={Link}>
+                        Cart
+                      </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
+                <Link to='/contact'> <NavLink>ContactUs</NavLink> </Link>
                 </Nav>
                 <Nav className="align-items-lg-center ml-lg-auto" navbar>
                   <NavItem>

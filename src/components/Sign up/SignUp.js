@@ -1,24 +1,5 @@
-/*!
-
-=========================================================
-* Argon Design System React - v1.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-design-system-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-design-system-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
-// reactstrap components
 import {
   Button,
   Card,
@@ -34,13 +15,10 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import DemoNavbar from "components/Navbars/DemoNavbar";
+import SimpleFooter from "components/Footers/SimpleFooter";
 
-// core components
-import DemoNavbar from "components/Navbars/DemoNavbar.js";
-import SimpleFooter from "components/Footers/SimpleFooter.js";
-import SignUp from "components/Sign up/SignUp";
-
-class Login extends React.Component {
+export class SignUp extends Component {
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
@@ -68,7 +46,7 @@ class Login extends React.Component {
                   <Card className="bg-secondary shadow border-0">
                     <CardHeader className="bg-white pb-5">
                       <div className="text-muted text-center mb-3">
-                        <small>Sign in with</small>
+                        <small>Sign up with</small>
                       </div>
                       <div className="btn-wrapper text-center">
                         <Button
@@ -103,7 +81,9 @@ class Login extends React.Component {
                     </CardHeader>
                     <CardBody className="px-lg-5 py-lg-5">
                       <div className="text-center text-muted mb-4">
-                        <small>Or sign in with credentials</small>
+                        <small>
+                          Enter your email and create a password to get started!
+                        </small>
                       </div>
                       <Form role="form">
                         <FormGroup className="mb-3">
@@ -130,18 +110,26 @@ class Login extends React.Component {
                             />
                           </InputGroup>
                         </FormGroup>
+                        <FormGroup className="mb-3">
+                          <InputGroup className="input-group-alternative">
+                            <InputGroupAddon addonType="prepend">
+                              <InputGroupText>
+                                <i className="ni ni-lock-circle-open" />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                              placeholder="Confirm Password"
+                              type="password"
+                              autoComplete="off"
+                            />
+                          </InputGroup>
+                        </FormGroup>
                         <div className="custom-control custom-control-alternative custom-checkbox">
                           <input
                             className="custom-control-input"
                             id=" customCheckLogin"
                             type="checkbox"
                           />
-                          <label
-                            className="custom-control-label"
-                            htmlFor=" customCheckLogin"
-                          >
-                            <span>Remember me</span>
-                          </label>
                         </div>
                         <div className="text-center">
                           <Button
@@ -149,7 +137,7 @@ class Login extends React.Component {
                             color="primary"
                             type="button"
                           >
-                            Sign in
+                            create your account
                           </Button>
                         </div>
                       </Form>
@@ -162,7 +150,7 @@ class Login extends React.Component {
                         href="#pablo"
                         onClick={(e) => e.preventDefault()}
                       >
-                        <small>Forgot password?</small>
+                        <small>Terms & Conditions</small>
                       </a>
                     </Col>
                     <Col className="text-right" xs="6">
@@ -172,12 +160,8 @@ class Login extends React.Component {
                         onClick={(e) => e.preventDefault()}
                       >
                         <small>
-                          <Link
-                            to="/login-page/signup"
-                            style={{ color: "#ced4da"}}
-                            onMouseEnter={{ color: "#adb5bd"}}
-                          >
-                            Create new account
+                          <Link to="/login-page" style={{ color: "#ced4da" }}>
+                            Already have an account?
                           </Link>
                         </small>
                       </a>
@@ -194,4 +178,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default SignUp;

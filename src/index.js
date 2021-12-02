@@ -28,27 +28,52 @@ import Landing from "views/examples/Landing.js";
 import Login from "views/examples/Login.js";
 import Profile from "views/examples/Profile.js";
 import Register from "views/examples/Register.js";
+import SignUp from "components/Sign up/SignUp";
+import Cart from "components/Cart/Cart";
+import Checkout from "components/Cart/Checkout";
+import ContactUs from "components/Contact Us/ContactUs";
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/" exact render={props => <Index {...props} />} />
+      <Route path="/" exact render={(props) => <Index {...props} />} />
       <Route
         path="/landing-page"
         exact
-        render={props => <Landing {...props} />}
+        render={(props) => <Landing {...props} />}
       />
-      <Route path="/login-page" exact render={props => <Login {...props} />} />
+      <Route
+        path="/login-page"
+        exact
+        render={(props) => <Login {...props} />}
+      />
       <Route
         path="/profile-page"
         exact
-        render={props => <Profile {...props} />}
+        render={(props) => <Profile {...props} />}
       />
+
+      <Route
+        path="/login-page/signup"
+        exact
+        render={(props) => <SignUp {...props} />}
+      />
+
       <Route
         path="/register-page"
         exact
-        render={props => <Register {...props} />}
+        render={(props) => <Register {...props} />}
       />
+
+      <Route path="/cart-page" exact render={(props) => <Cart {...props} />} />
+
+      <Route
+        path="/cart-page/checkout"
+        exact
+        render={(props) => <Checkout {...props} />}
+      />
+
+      <Route path="/contact" exact render={(props) => <ContactUs {...props} />} />
       <Redirect to="/" />
     </Switch>
   </BrowserRouter>,
